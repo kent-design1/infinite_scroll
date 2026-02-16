@@ -11,12 +11,12 @@
       <change afterPath="$PROJECT_DIR$/../.idea/material_theme_project_new.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/MotionDiv.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/action.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/AnimeCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AnimeCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/LoadMore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoadMore.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770819123949</updated>
-      <workItem from="1770924142640" duration="10095000" />
+      <workItem from="1770924142640" duration="12621000" />
     </task>
     <servers />
   </component>
