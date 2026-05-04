@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import auth from './routes/auth.js';
 import connectDB from "./config/db.js";
+import post from './routes/post.js';
 
 
 dotenv.config();
@@ -18,7 +19,8 @@ app.get('/', (req, res) => {
     res.json({message: 'App is running!'});
 })
 
-app.use('/api/authRoutes', auth);
+app.use('/api/auth', auth);
+app.use('/api/post', post);
 
 
 
