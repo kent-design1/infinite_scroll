@@ -5,8 +5,10 @@ const router = express.Router();
 import {protect} from "../middleware/authMiddleware.js"
 import Post from '../models/Post.js';
 
+import asyncHandler from "../utils/asyncHandler.js";
+
 // GET /api/posts — public, anyone can read posts
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
 
     try {
         const posts = await Post.find().populate('author', 'name email').sort({created: -1});
@@ -14,9 +16,9 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json({error: err.message});
     }
-});
+}));
         // GET /api/posts/:id — public
-router.get('/:id', async (req, res) => {
+router.get('/:id', asyncHandler(async (req, res) => {
             try{
                 const post = await Post.findById(req.params.id).populate('author', 'name email');
                 if(!post){
@@ -27,10 +29,10 @@ router.get('/:id', async (req, res) => {
             catch(err){
                 res.status(500).json({error: err.message});
             }
-        });
+        }));
 
         // POST /api/posts — protected, must be logged in
-router.post('/', protect, async (req, res) => {
+router.post('/', protect, asyncHandler( async (req, res) => {
         try{
             const {title, body} = req.body;
 
@@ -48,9 +50,9 @@ router.post('/', protect, async (req, res) => {
         catch(err){
             res.status(500).json({error: err.message});
         }
-    })
+    }))
 
-router.delete('/:id', protect, async (req, res) => {
+router.delete('/:id', protect, asyncHandler( async (req, res) => {
 
         try{
             const post = await Post.findById(req.params.id)
@@ -69,9 +71,9 @@ router.delete('/:id', protect, async (req, res) => {
         catch(err){
             res.status(500).json({error: err.message});
         }
-    })
+    }))
 
-router.put('/:id', protect, async (req, res) => {
+router.put('/:id', protect, asyncHandler( async (req, res) => {
     try{
         const post = await Post.findById(req.params.id)
 
@@ -96,7 +98,7 @@ router.put('/:id', protect, async (req, res) => {
     catch(err){
         res.status(500).json({error: err.message});
     }
-})
+}))
 
 
 export default router;

@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import auth from './routes/auth.js';
 import connectDB from "./config/db.js";
 import post from './routes/post.js';
-
+import user from './routes/user.js';
+import { notFound, errorHandler} from './middleware/errorMiddleware.js';
 
 dotenv.config();
 
@@ -15,14 +16,20 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
+
+
+app.use('/api/auth', auth);
+app.use('/api/posts', post);
+app.use('/api/users', user);
+
+
 app.get('/', (req, res) => {
     res.json({message: 'App is running!'});
 })
 
-app.use('/api/auth', auth);
-app.use('/api/post', post);
 
-
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
