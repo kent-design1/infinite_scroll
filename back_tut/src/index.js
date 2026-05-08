@@ -5,12 +5,21 @@ import connectDB from "./config/db.js";
 import post from './routes/post.js';
 import user from './routes/user.js';
 import { notFound, errorHandler} from './middleware/errorMiddleware.js';
+import cors from 'cors';
 
 dotenv.config();
 
 connectDB();
 
 const app = express();
+
+// Allow requests from your Next.js frontend
+app.use(cors({
+    origin: 'http://localhost:3001',    // 👈 only allow your frontend
+    credentials: true
+}))
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

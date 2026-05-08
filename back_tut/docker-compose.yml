@@ -15,7 +15,7 @@ services:
 
     # Environment variables — your app reads these via process.env
     environment:
-      - PORT=5000
+      - PORT=3000
       - MONGO_URI=mongodb+srv://kento120:kento120@cluster0.wesmb2v.mongodb.net/?appName=Cluster0
       - JWT_SECRET=b94375a71d35f47d9849c1a5c846848e29e53d8921bf4f1ba7be9dd37d1283705e67f3a21b302642eacee96cc88236ee1f1ba8141e3226dbddea5a67d781c862
       - NODE_ENV=development
